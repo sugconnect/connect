@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUG~connect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        #popup-ad {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            padding: 20px;
+            background: rgb(144, 146, 144);
+            border: 2px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 3);
+            z-index: 1000;
+        }
+
+        #popup-overlay{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0, 5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="logo.jpg">
+                    <span>SUG~connect</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="news.html">News & Updates</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="structure.html">SUG Structure</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Image Slider Section -->
+        <section class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="slide3.jpg" height=500 width=1200 alt="FUUO Campus">
+                    <div class="slide-content">
+                        <h2>Welcome to Federal University Utuoke</h2>
+                        <p>Your Student Union Government working for you</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="president.jpg" height=500 width=1200 alt="Graduation">
+                    <div class="slide-content">
+                        <h2>Excellence in Education</h2>
+                        <p>Empowering students for a brighter future</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="slide1.jpg"height=500 width=1200 alt="SUG Meeting">
+                    <div class="slide-content">
+                        <h2>7th Crocodile Republic</h2>
+                        <p>Student Union Government. Federal University Utouke. Bayelsa state</p>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <!--popup Ad-->
+        <div id="popup-overlay"></div>
+        <div id="popup-ad">
+            <p> <img src="august.jpg"> </p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+
+        <script>
+            //show popup after 2 seconds
+            window.addEventListener('load', function() {
+                setTimeout(function(){
+                    document.getElementById('popup-ad').style.display = 'block';
+                    document.getElementById('popup-overlay').style.display = 'block';
+                }, 2000);
+            });
+
+            function closePopup() {
+                  document.getElementById('popup-ad').style.display = 'none';
+                    document.getElementById('popup-overlay').style.display = 'none';
+                
+            }
+        </script>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <h1>Welcome to SUG~connect</h1>
+                <p class="lead">The official app of the Federal University Utuoke Student Union Government. Stay updated with the latest news, events, and activities that shape your university experience.</p>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links">
+            <div class="container">
+                <h2>Quick Access</h2>
+                <div class="links-grid">
+                    <div class="link-card">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>Latest News</h3>
+                        <p>Stay informed with the latest updates and announcements from SUG</p>
+                        <a href="news.html" class="btn">Read More</a>
+                    </div>
+                    <div class="link-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Upcoming Events</h3>
+                        <p>Check out upcoming events, meetings, and activities</p>
+                        <a href="events.html" class="btn">View Calendar</a>
+                    </div>
+                    <div class="link-card">
+                        <i class="fas fa-users"></i>
+                        <h3>SUG Structure</h3>
+                        <p>Learn about our leadership structure and responsibilities</p>
+                        <a href="structure.html" class="btn">Learn More</a>
+                    </div>
+                    <div class="link-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact Us</h3>
+                        <p>Get in touch with SUG members and officers</p>
+                        <a href="contact.html" class="btn">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent News Preview -->
+        <section class="news-preview">
+            <div class="container">
+                <h2>Recent Updates</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Orientation">
+                        <div class="news-content">
+                            <span class="news-date">January 25, 2025</span>
+                            <h3>New Student Orientation Program</h3>
+                            <p>Welcome new students to FUO with comprehensive orientation activities...</p>
+                            <a href="news.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Awards">
+                        <div class="news-content">
+                            <span class="news-date">January 20, 2025</span>
+                            <h3>Academic Excellence Awards</h3>
+                            <p>Celebrating outstanding academic achievements of FUO students...</p>
+                            <a href="news.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Welfare">
+                        <div class="news-content">
+                            <span class="news-date">January 15, 2025</span>
+                            <h3>Student Welfare Initiative</h3>
+                            <p>New programs launched to improve student welfare and campus life...</p>
+                            <a href="news.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SUG~connect</h3>
+                    <p>Federal University Utuoke Student Union Government - Serving students with dedication and transparency.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="events.html">Events Calendar</a></li>
+                        <li><a href="structure.html">SUG Structure</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> sug@fuuo.edu.ng</p>
+                    <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Federal University Utuoke, Bayelsa State</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Federal University Utuoke Student Union Government. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
