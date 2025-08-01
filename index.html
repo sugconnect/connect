@@ -6,32 +6,6 @@
     <title>SUG~connect</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-    <style>
-        #popup-ad {
-            display: none;
-            position: fixed;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            padding: 20px;
-            background: rgb(144, 146, 144);
-            border: 2px solid black;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 3);
-            z-index: 1000;
-        }
-
-        #popup-overlay{
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 50%;
-            width: 50%;
-            background: rgba(0, 0, 0, 0, 5);
-            z-index: 999;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -96,32 +70,8 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </section>
-
-        <!--popup Ad-->
-        <div id="popup-overlay"></div>
-        <div id="popup-ad">
-            <p> <img src="august.jpg"> </p>
-            <button onclick="closePopup()">Close</button>
-        </div>
-
-        <script>
-            //show popup after 2 seconds
-            window.addEventListener('load', function() {
-                setTimeout(function(){
-                    document.getElementById('popup-ad').style.display = 'block';
-                    document.getElementById('popup-overlay').style.display = 'block';
-                }, 2000);
-            });
-
-            function closePopup() {
-                  document.getElementById('popup-ad').style.display = 'none';
-                    document.getElementById('popup-overlay').style.display = 'none';
-                
-            }
-        </script>
-
-
-        <!-- Welcome Section -->
+       
+       <!-- Welcome Section -->
         <section class="welcome-section">
             <div class="container">
                 <h1>Welcome to SUG~connect</h1>
