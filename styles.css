@@ -1127,6 +1127,37 @@ footer {
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
 }
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+#splash-screen h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+#splash-screen p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+#splash-screen.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
