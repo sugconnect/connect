@@ -290,18 +290,26 @@
         </div>
     </footer>
  <script>
-    window.addEventListener('load', () => {
-      const splash = document.getElementById('splash-screen');
-      const mainContent = document.getElementById('main-content');
+  window.addEventListener('DOMContentLoaded', () => {
+    const splashShown = sessionStorage.getItem('splashShown');
 
+    if (!splashShown) {
+      // First time in this session: show splash
+      document.getElementById('splash-screen').style.display = 'flex';
+      document.getElementById('main-content').style.display = 'none';
+
+      // Delay for splash screen (e.g. 10 seconds)
       setTimeout(() => {
-        splash.classList.add('fade-out');
-        setTimeout(() => {
-          splash.style.display = 'none';
-          mainContent.style.display = 'block';
-        }, 1000); // match fade-out duration
+        document.getElementById('splash-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        sessionStorage.setItem('splashShown', 'true');
       }, 10000);
-    });
+    } else {
+      // Already shown during this session: skip splash
+      document.getElementById('splash-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }
+  });
   </script>
     <script src="script.js"></script>
 </body>
